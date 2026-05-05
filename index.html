@@ -27,15 +27,15 @@
            1. CSS VARIABLES & THEME
            ======================================================================= */
         :root {
-            /* Dark Theme (Default) */
-            --bg: #080C14;
-            --surface: rgba(255, 255, 255, 0.04);
-            --border: rgba(255, 255, 255, 0.08);
-            --text-primary: #F0EDE8;
-            --text-muted: #7A8A99;
-            --accent: #00D9C0;
-            --accent-warm: #FF6B6B;
-            --glow: rgba(0, 217, 192, 0.15);
+            /* Dark Theme (Default) - Cinematic Color Grading */
+            --bg: #0c0f12; /* Deep cinematic black */
+            --surface: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.07);
+            --text-primary: #eaeaea;
+            --text-muted: #8b949e;
+            --accent: #e5a970; /* Cinematic warm film tone */
+            --accent-warm: #5c8397; /* Cinematic teal */
+            --glow: rgba(229, 169, 112, 0.15);
             
             --nav-height: 90px;
             
@@ -73,7 +73,6 @@
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
-            cursor: none; /* Custom cursor */
             transition: background-color 0.4s ease, color 0.4s ease;
         }
 
@@ -81,8 +80,8 @@
         ::-webkit-scrollbar-track { background: var(--bg); }
         ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 
-        a { text-decoration: none; color: inherit; cursor: none; }
-        button { border: none; background: none; font-family: inherit; cursor: none; }
+        a { text-decoration: none; color: inherit; cursor: pointer; }
+        button { border: none; background: none; font-family: inherit; cursor: pointer; }
         ul { list-style: none; }
 
         .container { max-width: 1400px; margin: 0 auto; padding: 0 5vw; }
@@ -122,28 +121,7 @@
             100% { transform: translate(5vw, 10vh) scale(1.1); }
         }
 
-        /* =======================================================================
-           4. CUSTOM CURSOR
-           ======================================================================= */
-        #cursor-dot {
-            position: fixed; top: 0; left: 0; width: 6px; height: 6px;
-            background: var(--accent); border-radius: 50%;
-            pointer-events: none; z-index: var(--z-cursor); transform: translate(-50%, -50%);
-            transition: opacity 0.3s ease; will-change: transform;
-        }
-        #cursor-ring {
-            position: fixed; top: 0; left: 0; width: 38px; height: 38px;
-            border: 1px solid var(--accent); border-radius: 50%;
-            pointer-events: none; z-index: var(--z-cursor); transform: translate(-50%, -50%);
-            transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
-            will-change: transform;
-        }
-        /* Hover State Class applied via JS */
-        .cursor-hover #cursor-dot { opacity: 0; }
-        .cursor-hover #cursor-ring {
-            width: 56px; height: 56px; background: var(--glow);
-            border-color: transparent;
-        }
+
 
         /* =======================================================================
            5. SCROLL PROGRESS
@@ -202,7 +180,7 @@
         [data-theme="light"] .icon-moon { display: none; }
         [data-theme="light"] .icon-sun { display: block; }
 
-        .hamburger { display: none; flex-direction: column; gap: 6px; width: 30px; cursor: none; z-index: 1001; }
+        .hamburger { display: none; flex-direction: column; gap: 6px; width: 30px; cursor: pointer; z-index: 1001; }
         .hamburger span { width: 100%; height: 2px; background: var(--text-primary); transition: 0.3s; }
 
         /* Mobile Nav Overlay */
@@ -452,10 +430,8 @@
         <div class="blob"></div>
     </div>
 
-    <!-- Scroll Progress & Cursor -->
+    <!-- Scroll Progress -->
     <div class="scroll-progress" id="scroll-progress"></div>
-    <div id="cursor-dot"></div>
-    <div id="cursor-ring"></div>
 
     <!-- Navbar -->
     <nav id="nav">
@@ -530,7 +506,7 @@
             </div>
             <div class="profile-card reveal" style="transition-delay: 200ms;">
                 <div class="profile-inner">
-                    <span class="profile-monogram">DS</span>
+                    <span class="profile-monogram" style="font-size: clamp(1.5rem, 4vw, 2.5rem); text-align: center; padding: 1rem;">DEVA SREE</span>
                 </div>
             </div>
         </div>
@@ -760,34 +736,7 @@
          GLOBAL JAVASCRIPT
          ======================================================================= -->
     <script>
-        // 1. CUSTOM CURSOR (lerp)
-        const dot = document.getElementById('cursor-dot');
-        const ring = document.getElementById('cursor-ring');
-        
-        let mouseX = 0, mouseY = 0;
-        let ringX = 0, ringY = 0;
-        
-        window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            dot.style.transform = `translate(calc(-50% + ${mouseX}px), calc(-50% + ${mouseY}px))`;
-        });
-        
-        const renderCursor = () => {
-            // Lerp formula: current + (target - current) * friction
-            ringX += (mouseX - ringX) * 0.15;
-            ringY += (mouseY - ringY) * 0.15;
-            ring.style.transform = `translate(calc(-50% + ${ringX}px), calc(-50% + ${ringY}px))`;
-            requestAnimationFrame(renderCursor);
-        };
-        requestAnimationFrame(renderCursor);
 
-        // Cursor hover states
-        const hoverTargets = document.querySelectorAll('a, button, input, textarea, .js-tilt, .skill-pill');
-        hoverTargets.forEach(target => {
-            target.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-            target.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-        });
 
         // 2. SCROLL PROGRESS BAR & 3. NAVBAR HIDE/SHOW
         const progressBar = document.getElementById('scroll-progress');
