@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Deva Sree M, B.Sc Computer Science Student">
+    <title>Deva Sree M | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Advanced Dynamic Background Mesh -->
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo text-gradient">DM.</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <button id="theme-toggle" aria-label="Toggle Theme"><i class="fas fa-sun"></i></button>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="#home" class="mobile-link">Home</a>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+        <button id="mobile-theme-toggle" class="btn btn-secondary" style="width:fit-content"><i class="fas fa-sun"></i> Toggle Theme</button>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home" class="home">
+        <div class="container home-content">
+            <div class="home-text reveal">
+                <h3>Hi, I'm</h3>
+                <h1><span class="text-gradient">Deva Sree M</span></h1>
+                <h2 class="typing-text">I am a <span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
+                <p>A Computer Science student passionate about coding, problem solving, and building web applications.</p>
+                <div class="home-buttons">
+                    <a href="#projects" class="btn btn-primary"><i class="fas fa-briefcase"></i> View My Work</a>
+                    <a href="#" class="btn btn-secondary" download><i class="fas fa-download"></i> Resume</a>
+                </div>
+            </div>
+            <div class="home-image reveal">
+                <div class="img-wrapper">
+                    <img src="assets/profile.png" alt="Deva Sree M Profile">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title reveal">About Me</h2>
+            <div class="about-content reveal">
+                <div class="about-text">
+                    <p>I am Deva Sree M, currently pursuing B.Sc Computer Science with a specialization in Data Analytics at KPR College of Arts Science and Research.</p>
+                    <p>I have a strong interest in Java programming, problem solving, and web development. I actively work on coding challenges to improve my logical thinking. I am eager to learn new technologies and build impactful software solutions.</p>
+                </div>
+                <div class="skills">
+                    <h3>My Skills</h3>
+                    <div class="skill-tags">
+                        <span>Java</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Problem Solving</span>
+                        <span>Data Structures (Basic)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title reveal">My Projects</h2>
+            
+            <div class="project-filter reveal">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web App</button>
+                <button class="filter-btn" data-filter="java">Java</button>
+            </div>
+
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="project-card reveal" data-category="web">
+                    <div class="project-img">
+                        <img src="assets/project1.png" alt="Hospital Management System">
+                    </div>
+                    <div class="project-info">
+                        <h3>Hospital Management System</h3>
+                        <p>A project designed to manage hospital operations like patient records and appointments.</p>
+                        <a href="#" class="btn btn-outline" target="_blank">Live Demo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card reveal" data-category="java">
+                    <div class="project-img">
+                        <img src="assets/project2.png" alt="Java Coding Practice">
+                    </div>
+                    <div class="project-info">
+                        <h3>Java Coding Practice</h3>
+                        <p>Solved multiple problems from platforms like LeetCode to improve algorithmic thinking.</p>
+                        <a href="#" class="btn btn-outline" target="_blank">Live Demo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card reveal" data-category="web">
+                    <div class="project-img">
+                        <img src="assets/project3.png" alt="Personal Portfolio Website">
+                    </div>
+                    <div class="project-info">
+                        <h3>Personal Portfolio Website</h3>
+                        <p>A responsive website to showcase my skills, projects, and contact details.</p>
+                        <a href="#" class="btn btn-outline" target="_blank">Live Demo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title reveal">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info-card reveal">
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>devaseree536@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-university"></i></div>
+                        <div>
+                            <h4>College</h4>
+                            <p>KPR College of Arts Science and Research</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" target="_blank" aria-label="Github"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <form id="contact-form" class="contact-form reveal" novalidate>
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                        <span class="error-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required>
+                        <span class="error-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                        <span class="error-msg"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    <div class="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="year"></span> Deva Sree M. All rights reserved.</p>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
